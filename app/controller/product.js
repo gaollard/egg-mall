@@ -1,9 +1,9 @@
 const Controller = require('egg').Controller;
 
-class HomeController extends Controller {
-  async index() {
+class ProductController extends Controller {
+  async list() {
     this.ctx.body = await this.service.product.list()
   }
 }
 
-module.exports = HomeController;
+module.exports = ProductController;
