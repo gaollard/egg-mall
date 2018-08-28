@@ -1,4 +1,4 @@
-const Controller = require('egg').Controller;
+const Controller = require('egg').Controller
 
 class HomeController extends Controller {
   async index() {
@@ -6,4 +6,4 @@ class HomeController extends Controller {
   }
 }
 
-module.exports = HomeController;
+module.exports = HomeController

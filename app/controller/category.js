@@ -1,4 +1,4 @@
-const Controller = require('egg').Controller;
+const Controller = require('egg').Controller
 
 class CategoryController extends Controller {
   async list() {
@@ -6,4 +6,4 @@ class CategoryController extends Controller {
   }
 }
 
-module.exports = CategoryController;
+module.exports = CategoryController

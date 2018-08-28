@@ -1,4 +1,4 @@
-const Controller = require('egg').Controller;
+const Controller = require('egg').Controller
 
 class BrandController extends Controller {
   async list() {
@@ -7,4 +7,4 @@ class BrandController extends Controller {
   }
 }
 
-module.exports = BrandController;
+module.exports = BrandController
