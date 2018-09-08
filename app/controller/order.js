@@ -8,15 +8,19 @@ class OrderController extends Controller {
     this.ctx.body = await orderService.list()
   }
 
+  // 创建订单
   async add () {
   	const orderService = this.service.order
   	const userService = this.service.user
   	let { loginToken } = this.ctx.request.body
   	const userInfo = await userService.getUserInfo({ loginToken })
+  	const ret = await orderService.add({
+  		userId: userInfo._id,
+  		payment: 300000,
+  		orderItems: []
+  	})
   	this.ctx.body = {
-  		data: {
-
-  		},
+  		data: ret,
   		msg: '',
   		code: '0'
   	}

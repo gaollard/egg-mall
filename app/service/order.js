@@ -12,19 +12,15 @@ class BrandService extends Service {
   }
 
   // 创建订单
-  async add({ userId, payment, paymentType, orderItems }) {
+  async add({ userId, payment, orderItems }) {
   	const list = await this.app.model.Order.find({})
   	const creator = new this.app.model.Order({
   		userId,
   		orderItems,
-  		paymentType
+      payment
   	})
     const creatorResult = await creator.save()
-    return {
-    	data: creatorResult,
-    	msg: '',
-    	code: '0'
-    }
+    return creatorResult
   }
 }
 
