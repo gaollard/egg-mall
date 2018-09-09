@@ -10,6 +10,11 @@ class ProductService extends Service {
       code: '0'
     }
   }
+
+  async item ({ productId }) {
+  	const productInfo = await this.app.model.Product.find({ productId })
+    return productInfo[0] || {}
+  }
 }
 
 module.exports = ProductService;

@@ -12,12 +12,12 @@ class OrderController extends Controller {
   async add () {
   	const orderService = this.service.order
   	const userService = this.service.user
-  	let { loginToken } = this.ctx.request.body
+  	let { loginToken, payment, orderItems } = this.ctx.request.body
   	const userInfo = await userService.getUserInfo({ loginToken })
   	const ret = await orderService.add({
   		userId: userInfo._id,
-  		payment: 300000,
-  		orderItems: []
+  		payment: payment,
+  		orderItems: orderItems
   	})
   	this.ctx.body = {
   		data: ret,
